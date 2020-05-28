@@ -940,3 +940,17 @@ input:focus {
         width: 90%;
     }
 }
+
+/*----------------- Project.html -----------------*/
+.prev,
+.next p {
+    color: grey;
+}
+
+.prev {
+    text-align: left;
+}
+
+.next {
+    text-align: right;
+}
