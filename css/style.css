@@ -396,6 +396,12 @@ nav #menu li a:hover {
 }
 
 @media(max-width: 768px) {
+
+    #menu li a::before,
+    a::after {
+        display: none;
+    }
+
     #toggle {
         margin-top: 6px;
         margin-right: 4px;
@@ -824,12 +830,43 @@ h6 {
 
 @media (max-width: 768px) {
     .project {
-        width: 90% !important;
+        width: 95.5% !important;
         margin: 14px auto;
     }
 
     .vertical {
         display: none;
+    }
+
+    .project1 a.info {
+        margin: 45% auto;
+        margin-left: 40%;
+    }
+
+    .project2 a.info {
+        margin: 45% auto;
+        margin-left: 40%;
+    }
+
+    .project3 a.info {
+        margin: 45% auto;
+        margin-left: 40%;
+    }
+
+    .project4 a.info {
+        margin: 45% auto;
+        margin-left: 38%;
+    }
+
+    .project1:hover img,
+    .project2:hover img,
+    .project3:hover img,
+    .project4:hover img {
+        filter: grayscale(1) blur(1px);
+        -webkit-filter: grayscale(1) blur(1px);
+        -webkit-transform: scale(1.05);
+        -ms-transform: scale(1.05);
+        transform: scale(1.05);
     }
 
     .project1::after,
@@ -1027,7 +1064,7 @@ h6 {
 
     .art1::after,
     .art2::after,
-    .artt3::after,
+    .art3::after,
     .art4::after {
         display: none;
     }
@@ -1286,11 +1323,27 @@ input:focus {
     right: 0;
 }
 
+#contact-h2 {
+    text-align: center;
+}
 
 @media (max-width: 768px) {
     #contact-form {
-        margin: 5% -8%;
+        margin: 50% 0;
         width: 90%;
+    }
+
+    .send {
+        text-align: center;
+        width: 81%;
+
+    }
+
+    #contact-h2 {
+        margin: auto;
+        left: 0;
+        margin-top: 200px;
+        margin-bottom: -100px;
     }
 }
 
@@ -1306,4 +1359,14 @@ input:focus {
 
 .next {
     text-align: right;
+}
+
+@media (max-width: 768px) {
+    .prev {
+        margin-top: 40px;
+    }
+
+    .next {
+        margin-top: -40px;
+    }
 }
