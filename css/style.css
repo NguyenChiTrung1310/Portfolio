@@ -317,7 +317,7 @@ nav #menu li a:hover {
     float: right;
 
     right: 30px;
-    top: 20px;
+    top: 18px;
     height: 30px;
     width: 30px;
     font-weight: 300;
@@ -326,6 +326,11 @@ nav #menu li a:hover {
     transition: all 0.3s ease-out;
     visibility: hidden;
     opacity: 0;
+}
+
+#toggle i {
+    font-size: 25px;
+    margin-left: 28px;
 }
 
 .close-btn {
@@ -338,6 +343,10 @@ nav #menu li a:hover {
     line-height: 80px;
 
     z-index: 2;
+}
+
+.close-btn i {
+    font-size: 25px;
 }
 
 #resize {
