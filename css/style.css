@@ -7,7 +7,7 @@ body {
     height: 100%;
 
     font-family: 'Poppins', sans-serif !important;
-    background: #0f0f0f !important;
+    background-image: linear-gradient(to right, #434343 0%, black 100%) !important;
     color: #fff !important;
 }
 
@@ -113,40 +113,6 @@ body {
     }
 }
 
-/*.loader:before,
-.loader:after {
-    content: '';
-    border: 1em solid #ff5733;
-    border-radius: 50%;
-    width: inherit;
-    height: inherit;
-    position: absolute;
-    top: 0;
-    left: 0;
-    animation: loader 2s linear infinite;
-    opacity: 0;
-}
-
-.loader:before {
-    animation-delay: .5s;
-}
-
-@keyframes loader {
-    0% {
-        transform: scale(0);
-        opacity: 0;
-    }
-
-    50% {
-        opacity: 1;
-    }
-
-    100% {
-        transform: scale(1);
-        opacity: 0;
-    }
-}*/
-
 /*----------------- Animation Text -----------------*/
 .line {
     width: 24em;
@@ -205,7 +171,7 @@ nav {
     width: 100%;
     height: 80px;
 
-    background: #0f0f0f;
+    background-image: linear-gradient(to right, #434343 0%, black 100%);
     position: fixed;
     z-index: 1;
 }
@@ -305,11 +271,55 @@ nav #menu li a {
     opacity: 1;
 }
 
-nav #menu li a:hover {
-    text-decoration: none;
+nav #brand a::before,
+nav #brand a::after {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    content: '';
+    opacity: 0;
+    -webkit-transition: opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: opacity 0.3s, -moz-transform 0.3s;
+    transition: opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    transform: translateY(-10px);
 }
 
+nav #brand a::before {
+    top: 0;
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    transform: translateY(-10px);
+}
 
+nav #brand a::after {
+    bottom: 30px;
+    -webkit-transform: translateY(30px);
+    -moz-transform: translateY(30px);
+    transform: translateY(30px);
+}
+
+nav #brand a:hover,
+nav #brand a:focus {
+    color: #fff;
+}
+
+nav #brand a:hover::before,
+nav #brand a:focus::before,
+nav #brand a:hover::after,
+nav #brand a:focus::after {
+    opacity: 1;
+    -webkit-transform: translateY(15px);
+    -moz-transform: translateY(15px);
+    transform: translateY(15px);
+}
+
+nav #brand a:hover {
+    text-decoration: none;
+}
 
 #toggle {
     position: absolute;
@@ -328,7 +338,7 @@ nav #menu li a:hover {
     opacity: 0;
 }
 
-#toggle i {
+#toggle p {
     font-size: 25px;
     margin-left: 28px;
 }
@@ -337,16 +347,13 @@ nav #menu li a:hover {
     position: absolute;
     cursor: pointer;
 
-    right: 16px;
+    right: 10px;
     font-weight: 300;
-    top: -2px;
+    top: 3px;
     line-height: 80px;
+    font-size: 25px;
 
     z-index: 2;
-}
-
-.close-btn i {
-    font-size: 25px;
 }
 
 #resize {
@@ -407,6 +414,11 @@ nav #menu li a:hover {
 @media(max-width: 768px) {
 
     #menu li a::before,
+    a::after {
+        display: none;
+    }
+
+    nav #brand a::before,
     a::after {
         display: none;
     }
@@ -1228,6 +1240,47 @@ h6 {
     background-position: center;
 
 }
+
+.read {
+
+    border-radius: 4px;
+    background: transparent;
+
+    color: #999;
+    text-align: center;
+    font-size: 14px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+
+}
+
+.read span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.read span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.read:hover span {
+    padding-right: 25px;
+}
+
+.read:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
 
 @media (max-width: 768px) {
     .image {
